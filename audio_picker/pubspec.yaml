@@ -1,0 +1,27 @@
+name: audio_picker
+description: This plugin provides an Audio picker to retrieve the absolute path of Audio files.
+version: 1.0.0
+author: chiragshenoy <chiragshenoy@gmail.com>
+homepage: https://github.com/chiragshenoy/audio_picker
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  hsl_colorpicker: any
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_native_splash: ^0.2.8
+  flutter_test:
+    sdk: flutter
+flutter_native_splash:
+  color: "#ff0000"
+  image: images/splashxy.png
+  android: true
+
+flutter:
+  plugin:
+    androidPackage: com.audio_picker.audio_picker
+    pluginClass: AudioPickerPlugin

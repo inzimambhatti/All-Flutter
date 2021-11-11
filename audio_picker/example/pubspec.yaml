@@ -1,0 +1,26 @@
+name: audio_picker_example
+description: Demonstrates how to use the audio_picker plugin.
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.2
+  audioplayers: ^0.13.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  audio_picker:
+    path: ../
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  uses-material-design: true
