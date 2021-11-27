@@ -3,7 +3,7 @@ import 'package:bidding_application_fyp/components/default_button.dart';
 import 'package:flutter/material.dart';
 
 
-import '../../../globals.dart';
+
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 

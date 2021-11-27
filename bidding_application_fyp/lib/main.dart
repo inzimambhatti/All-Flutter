@@ -3,10 +3,10 @@ import 'package:bidding_application_fyp/routes.dart';
 import 'package:bidding_application_fyp/screens/profile/profile_screen.dart';
 import 'package:bidding_application_fyp/screens/splash/splash_screen.dart';
 import 'package:bidding_application_fyp/theme.dart';
-import 'globals.dart' as globals;
+
 void main() {
   runApp(MyApp());
-//globals.isBuyer=true;
+
 }
 
 class MyApp extends StatelessWidget {

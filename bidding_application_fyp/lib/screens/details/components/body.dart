@@ -1,3 +1,4 @@
+import 'package:bidding_application_fyp/bidding_components/place_bid.dart';
 import 'package:flutter/material.dart';
 import 'package:bidding_application_fyp/components/default_button.dart';
 import 'package:bidding_application_fyp/models/Product.dart';
@@ -22,6 +23,9 @@ class Body extends StatelessWidget {
           color: Colors.white,
           child: Column(
             children: [
+              SizedBox(height: 10,),
+              PlaceBid(),
+              SizedBox(height: 10,),
               ProductDescription(
                 product: product,
                 pressOnSeeMore: () {},

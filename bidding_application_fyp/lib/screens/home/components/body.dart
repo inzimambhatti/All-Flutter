@@ -1,3 +1,5 @@
+import 'package:bidding_application_fyp/components/become_seller_button.dart';
+import 'package:bidding_application_fyp/components/default_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
@@ -17,6 +19,7 @@ class Body extends StatelessWidget {
             SizedBox(height: getProportionateScreenHeight(20)),
             HomeHeader(),
             SizedBox(height: getProportionateScreenWidth(10)),
+           BecomeSellerButton(text: "Welcome!Wanna Become a Seller?",),
             DiscountBanner(),
             Categories(),
             SpecialOffers(),

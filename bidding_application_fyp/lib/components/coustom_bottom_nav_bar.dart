@@ -5,7 +5,7 @@ import 'package:bidding_application_fyp/screens/profile/profile_screen.dart';
 
 import '../constants.dart';
 import '../enums.dart';
-import '../globals.dart';
+
 
 class CustomBottomNavBar extends StatelessWidget {
 
@@ -21,7 +21,7 @@ class CustomBottomNavBar extends StatelessWidget {
 
     //final Color inActiveIconColor = Color(0xFFB6B6B6);
     final Color inActiveIconColor = Colors.black;
-
+bool? isBuyer=true;
 
     return
 
