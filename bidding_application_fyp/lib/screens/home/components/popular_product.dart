@@ -17,20 +17,59 @@ class PopularProducts extends StatelessWidget {
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
+
           child: Row(
             children: [
-              ...List.generate(
-                demoProducts.length,
-                (index) {
-                  if (demoProducts[index].isPopular)
-                    return ProductCard(product: demoProducts[index]);
+              Column(
+                children: [
+                  ...List.generate(
+                    demoProducts.length,
+                    (index) {
+                      if (demoProducts[index].isPopular)
+                        return ProductCard(product: demoProducts[index]);
 
-                  return SizedBox
-                      .shrink(); // here by default width and height is 0
-                },
+                      return SizedBox
+                          .square(); // here by default width and height is 0
+                    },
+                  ),
+                  ...List.generate(
+                    demoProducts.length,
+                        (index) {
+                      if (demoProducts[index].isPopular)
+                        return ProductCard(product: demoProducts[index]);
+
+                      return SizedBox
+                          .square(); // here by default width and height is 0
+                    },
+                  ),
+                  SizedBox(width: getProportionateScreenWidth(20)),
+                ],
               ),
-              SizedBox(width: getProportionateScreenWidth(20)),
+              Column(
+                children: [
+                  ...List.generate(
+                    demoProducts.length,
+                        (index) {
+                      if (demoProducts[index].isPopular)
+                        return ProductCard(product: demoProducts[index]);
+
+                      return SizedBox
+                          .square(); // here by default width and height is 0
+                    },
+                  ),
+                  ...List.generate(
+                    demoProducts.length,
+                        (index) {
+                      if (demoProducts[index].isPopular)
+                        return ProductCard(product: demoProducts[index]);
+
+                      return SizedBox
+                          .square(); // here by default width and height is 0
+                    },
+                  ),
+                  SizedBox(width: getProportionateScreenWidth(20)),
+                ],
+              ),
             ],
           ),
         )

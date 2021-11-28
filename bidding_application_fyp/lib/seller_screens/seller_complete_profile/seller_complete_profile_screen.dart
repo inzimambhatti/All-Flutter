@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'components/body.dart';
 
-class CompleteProfileScreen extends StatelessWidget {
+class SellerCompleteProfileScreen extends StatelessWidget {
   static String routeName = "/seller_complete_profile";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        title: Text('Seller Complete Profile'),
       ),
       body: Body(),
     );
