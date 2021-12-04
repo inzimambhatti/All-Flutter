@@ -1,3 +1,6 @@
+import 'package:bidding_application_fyp/screens/home/components/default_button_nav_bar.dart';
+import 'package:bidding_application_fyp/screens/profile/components/body.dart';
+import 'package:bidding_application_fyp/seller_screens/seller_home/components/seler_default_buttom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bidding_application_fyp/constants.dart';
 import 'package:bidding_application_fyp/screens/sign_in/sign_in_screen.dart';
@@ -68,7 +71,18 @@ class _BodyState extends State<Body> {
                     DefaultButton(
                       text: "Continue",
                       press: () {
-                        Navigator.pushNamed(context, SignInScreen.routeName);
+
+                        if(isBuyer) {
+                         setState(() {
+                           Navigator.pushNamed(context, DefaultBottomNavBar.routeName);
+                         });
+                        } else {
+                         setState(() {
+                           Navigator.pushNamed(context, SellerDefaultBottomNavBar
+                               .routeName);
+                         });
+                          //Navigator.pushNamed(context, SignInScreen.routeName);
+                        }
                       },
                     ),
                     Spacer(),

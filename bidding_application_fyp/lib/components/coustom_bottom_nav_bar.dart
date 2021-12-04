@@ -1,3 +1,4 @@
+import 'package:bidding_application_fyp/seller_screens/seller_home/seller_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:bidding_application_fyp/screens/home/home_screen.dart';
@@ -5,7 +6,7 @@ import 'package:bidding_application_fyp/screens/profile/profile_screen.dart';
 
 import '../constants.dart';
 import '../enums.dart';
-
+bool? isBuyer=false;
 
 class CustomBottomNavBar extends StatelessWidget {
 
@@ -21,7 +22,7 @@ class CustomBottomNavBar extends StatelessWidget {
 
     //final Color inActiveIconColor = Color(0xFFB6B6B6);
     final Color inActiveIconColor = Colors.black;
-bool? isBuyer=true;
+
 
     return
 
@@ -96,7 +97,7 @@ bool? isBuyer=true;
                         : inActiveIconColor,
                   ),
                   onPressed: () =>
-                      Navigator.pushNamed(context, HomeScreen.routeName),
+                      Navigator.pushNamed(context, SellerHomeScreen.routeName),
                 ),
                 IconButton(
                   icon: Icon(Icons.chat_outlined),

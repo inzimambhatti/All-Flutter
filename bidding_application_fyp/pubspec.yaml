@@ -32,6 +32,9 @@ dependencies:
   easy_dialog: ^1.1.0
   awesome_dialog: ^2.1.1
   toggle_switch: ^1.3.0
+  switcher: ^1.0.0
+  flappy_search_bar: ^1.7.2
+  animated_search_bar: ^2.0.0
 
 dev_dependencies:
   flutter_test:

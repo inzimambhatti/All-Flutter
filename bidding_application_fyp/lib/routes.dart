@@ -1,5 +1,11 @@
+import 'package:bidding_application_fyp/screens/chat/chat_screen.dart';
+import 'package:bidding_application_fyp/screens/home/components/default_button_nav_bar.dart';
+import 'package:bidding_application_fyp/screens/purchased/purchased_screen.dart';
+import 'package:bidding_application_fyp/screens/search/search_screen.dart';
 import 'package:bidding_application_fyp/seller_screens/become_seller/become_seller_screen.dart';
 import 'package:bidding_application_fyp/seller_screens/seller_complete_profile/seller_complete_profile_screen.dart';
+import 'package:bidding_application_fyp/seller_screens/seller_home/components/seler_default_buttom_nav_bar.dart';
+import 'package:bidding_application_fyp/seller_screens/seller_home/seller_home_screen.dart';
 
 import 'package:flutter/widgets.dart';
 import 'package:bidding_application_fyp/screens/cart/cart_screen.dart';
@@ -34,5 +40,10 @@ final Map<String, WidgetBuilder> routes = {
   CartScreen.routeName: (context) => CartScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
   BecomeSellerScreen.routeName: (context) => BecomeSellerScreen(),
-
+  SellerHomeScreen.routeName: (context) => SellerHomeScreen(),
+  ChatScreen.routeName: (context) => ChatScreen(),
+  DefaultBottomNavBar.routeName: (context) => DefaultBottomNavBar(),
+  SearchScreen.routeName: (context) => SearchScreen(),
+  PurchasedScreen.routeName: (context) => PurchasedScreen(),
+  SellerDefaultBottomNavBar.routeName: (context) => SellerDefaultBottomNavBar(),
 };

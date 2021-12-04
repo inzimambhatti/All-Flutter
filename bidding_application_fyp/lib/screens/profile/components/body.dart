@@ -1,55 +1,79 @@
 import 'package:bidding_application_fyp/components/coustom_bottom_nav_bar.dart';
 import 'package:bidding_application_fyp/components/custom_card.dart';
-import 'package:bidding_application_fyp/components/default_button.dart';
-import 'package:bidding_application_fyp/constants.dart';
-import 'package:toggle_switch/toggle_switch.dart';
 import 'package:flutter/material.dart';
-
-
-
+import 'package:switcher/core/switcher_size.dart';
+import 'package:switcher/switcher.dart';
+import '../../../size_config.dart';
 import 'profile_menu.dart';
 import 'profile_pic.dart';
+bool isBuyer=false;
+class Body extends StatefulWidget {
+  const Body({Key? key}) : super(key: key);
 
-class Body extends StatelessWidget {
+  @override
+  _BodyState createState() => _BodyState();
+}
 
+class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(horizontal: 5),
       child: Column(
         children: [
-
           ProfilePic(),
-          default_card(userName: ("inzimam bhatti"),balance: ("        PB:1000/Rs"), ),
-          //SizedBox(height: 20),
-          // DefaultButton(
-          //   text: "Seller Mode",
-          //   press: () {
-          //
-          //   // isBuyer=true;
-          //    // Navigator.pushNamed(context, SignInScreen.routeName);
-          //   },
-          // ),
-          ToggleSwitch(
-            minWidth: 102.0,
-            minHeight: 40.0,
-            fontSize: 16.0,
-            initialLabelIndex: 1,
-            activeBgColor: [kPrimaryColor],
-            activeFgColor: Colors.white,
-            inactiveBgColor: Colors.teal,
-            inactiveFgColor: Colors.grey[900],
-            totalSwitches: 3,
-            labels: ['Seller', 'Buyer', 'Logout'],
-            onToggle: (index) {
-              print('switched to: $index');
-            },
+          Stack(
+            children: [
+              default_card(userName: ("inzimam bhatti"),balance: ("        PB:1000/Rs"), ),
+              Container(
+                margin:EdgeInsets.only(left: 31,top: 63) ,
+                width: getProportionateScreenWidth(300),
+                height: getProportionateScreenHeight(40),
+                decoration: BoxDecoration(
+                    color: Colors.green,
+                    border: Border.all(
+                      color: Colors.white,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(20))
+                ),
+                //color: Colors.teal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Seller mode",style:
+                    TextStyle(color: Colors.black,
+                        fontWeight: FontWeight.bold),),
+                    const SizedBox(width: 100,),
+
+
+                    Switcher(
+                      value: false,
+                      size: SwitcherSize.medium,
+                      switcherButtonRadius: 50,
+                      enabledSwitcherButtonRotate: true,
+                      iconOff: Icons.lock,
+                      iconOn: Icons.lock_open,
+                      colorOff: Colors.black,
+                      colorOn: Colors.blue,
+                      onChanged: (bool state){
+
+                          isBuyer=state;
+
+                        //
+                      },
+                    ),
+                  ],
+                ),
+              )
+
+            ],
           ),
           ProfileMenu(
             text: "My Account",
             icon: "assets/icons/User Icon.svg",
             press: () => {},
           ),
+
           ProfileMenu(
             text: "Notifications",
             icon: "assets/icons/Bell.svg",
@@ -75,3 +99,4 @@ class Body extends StatelessWidget {
     );
   }
 }
+
