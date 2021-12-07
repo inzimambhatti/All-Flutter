@@ -1,5 +1,6 @@
 import 'package:bidding_application_fyp/components/coustom_bottom_nav_bar.dart';
 import 'package:bidding_application_fyp/components/custom_card.dart';
+import 'package:bidding_application_fyp/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:switcher/core/switcher_size.dart';
 import 'package:switcher/switcher.dart';
@@ -30,7 +31,8 @@ class _BodyState extends State<Body> {
                 width: getProportionateScreenWidth(300),
                 height: getProportionateScreenHeight(40),
                 decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: Colors.black
+                    ,
                     border: Border.all(
                       color: Colors.white,
                     ),
@@ -41,23 +43,28 @@ class _BodyState extends State<Body> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text("Seller mode",style:
-                    TextStyle(color: Colors.black,
+                    TextStyle(
+
+                        color: Colors.white,
                         fontWeight: FontWeight.bold),),
                     const SizedBox(width: 100,),
 
 
                     Switcher(
                       value: false,
-                      size: SwitcherSize.medium,
+                      switcherButtonColor: Colors.black,
+                      size: SwitcherSize.small,
                       switcherButtonRadius: 50,
                       enabledSwitcherButtonRotate: true,
                       iconOff: Icons.lock,
                       iconOn: Icons.lock_open,
-                      colorOff: Colors.black,
-                      colorOn: Colors.blue,
+                      colorOff: Colors.white,
+                      colorOn: Colors.orange,
                       onChanged: (bool state){
-
-                          isBuyer=state;
+                          //
+                          // setState(() {
+                          //   isBuyer=state;
+                          // });
 
                         //
                       },

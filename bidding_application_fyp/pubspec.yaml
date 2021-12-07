@@ -35,6 +35,8 @@ dependencies:
   switcher: ^1.0.0
   flappy_search_bar: ^1.7.2
   animated_search_bar: ^2.0.0
+  font_awesome_flutter: ^9.2.0
+  percent_indicator: ^3.4.0
 
 dev_dependencies:
   flutter_test:
