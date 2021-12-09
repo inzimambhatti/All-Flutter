@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bidding_application_fyp/components/product_card.dart';
 import 'package:bidding_application_fyp/models/Product.dart';
@@ -20,25 +19,19 @@ class PopularProducts extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-
             children: [
-                  ...List.generate(
-                    demoProducts.length,
-                    (index) {
-                      if (demoProducts[index].isPopular)
-                        return ProductCard(product: demoProducts[index]);
+              ...List.generate(
+                demoProducts.length,
+                (index) {
+                  if (demoProducts[index].isPopular)
+                    return ProductCard(product: demoProducts[index]);
 
-                      return SizedBox
-                          .square(); // here by default width and height is 0
-                    },
-                  ),
-
-                  SizedBox(width: getProportionateScreenWidth(20)),
-                ],
-
-
-
+                  return SizedBox
+                      .shrink(); // here by default width and height is 0
+                },
+              ),
+              SizedBox(width: getProportionateScreenWidth(20)),
+            ],
           ),
         )
       ],

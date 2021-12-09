@@ -1,4 +1,5 @@
-import 'package:bidding_application_fyp/screens/home/components/default_button_nav_bar.dart';
+
+import 'package:bidding_application_fyp/components/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 
@@ -18,7 +19,6 @@ class _ChatScreenState extends State<ChatScreen> {
           child: Text("i am chat screen"),
         ),
       ),
-      //bottomNavigationBar: DefaultBottomNavBar(),
     );
   }
 }

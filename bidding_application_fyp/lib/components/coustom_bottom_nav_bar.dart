@@ -1,4 +1,9 @@
+import 'package:bidding_application_fyp/screens/chat/chat_screen.dart';
+import 'package:bidding_application_fyp/screens/profile/components/body.dart';
+import 'package:bidding_application_fyp/screens/purchased/purchased_screen.dart';
+import 'package:bidding_application_fyp/screens/search/search_screen.dart';
 import 'package:bidding_application_fyp/seller_screens/seller_home/seller_home_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:bidding_application_fyp/screens/home/home_screen.dart';
@@ -6,8 +11,8 @@ import 'package:bidding_application_fyp/screens/profile/profile_screen.dart';
 
 import '../constants.dart';
 import '../enums.dart';
-bool? isBuyer=false;
 
+bool isBuyer=true;
 class CustomBottomNavBar extends StatelessWidget {
 
   const CustomBottomNavBar({
@@ -61,17 +66,23 @@ class CustomBottomNavBar extends StatelessWidget {
               IconButton(
                icon: Icon(Icons.chat_outlined),
                 // icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, ChatScreen.routeName);
+                },
               ),
               IconButton(
                 icon: Icon(Icons.search),
                 //icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, SearchScreen.routeName);
+                },
               ),
               IconButton(
                 icon: Icon(Icons.wallet_giftcard),
                 //icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, PurchasedScreen.routeName);
+                },
               ),
               IconButton(
                 // icon: SvgPicture.asset(

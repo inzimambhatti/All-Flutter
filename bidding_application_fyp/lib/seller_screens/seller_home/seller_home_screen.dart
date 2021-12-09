@@ -1,7 +1,5 @@
-import 'package:bidding_application_fyp/components/coustom_bottom_nav_bar.dart';
 import 'package:bidding_application_fyp/enums.dart';
 import 'package:flutter/material.dart';
-
 import 'components/body.dart';
 class SellerHomeScreen extends StatefulWidget {
   const SellerHomeScreen({Key? key}) : super(key: key);

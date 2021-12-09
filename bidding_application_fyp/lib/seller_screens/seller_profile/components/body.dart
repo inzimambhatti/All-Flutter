@@ -25,7 +25,7 @@ class _BodyState extends State<Body> {
           ProfilePic(),
           Stack(
             children: [
-              default_card(userName: ("inzimam bhatti"),balance: ("        PB:1000/Rs"), ),
+              default_card(userName: ("inzimam bhatti"),balance: (" PB:112323/Rs"), ),
               Container(
                 margin:EdgeInsets.only(left: 31,top: 63) ,
                 width: getProportionateScreenWidth(300),
@@ -42,7 +42,7 @@ class _BodyState extends State<Body> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                   Text("Seller mode    Comming soon"),
+                   Text("Seller mode Coming soon",style: kNormalTextStyle,),
                     const SizedBox(width: 100,),
 
 
