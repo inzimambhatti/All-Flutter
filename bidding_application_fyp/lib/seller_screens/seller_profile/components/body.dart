@@ -1,9 +1,7 @@
-import 'package:bidding_application_fyp/components/bottom_navigation.dart';
+
 import 'package:bidding_application_fyp/components/custom_card.dart';
 import 'package:bidding_application_fyp/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:switcher/core/switcher_size.dart';
-import 'package:switcher/switcher.dart';
 import '../../../size_config.dart';
 import 'profile_menu.dart';
 import 'profile_pic.dart';
@@ -57,7 +55,6 @@ class _BodyState extends State<Body> {
             icon: "assets/icons/User Icon.svg",
             press: () => {},
           ),
-
           ProfileMenu(
             text: "Notifications",
             icon: "assets/icons/Bell.svg",

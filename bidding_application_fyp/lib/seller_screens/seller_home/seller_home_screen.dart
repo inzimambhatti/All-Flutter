@@ -1,3 +1,4 @@
+import 'package:bidding_application_fyp/constants.dart';
 import 'package:bidding_application_fyp/enums.dart';
 import 'package:flutter/material.dart';
 import 'components/body.dart';
@@ -13,6 +14,7 @@ class _SellerHomeScreenState extends State<SellerHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: kActiveCardColour,
       body: Body(),
       //bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home,),
     );

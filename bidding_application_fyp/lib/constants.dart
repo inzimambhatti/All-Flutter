@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:bidding_application_fyp/size_config.dart';
 
-//const kPrimaryColor = Color(0xFFFF7643);
-const kPrimaryColor = Colors.orange;
+const kPrimaryColor = Colors.blueAccent;
+const kMintGreen = Color(0x3EB489);
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
+
+
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
   colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
@@ -25,7 +27,7 @@ const defaultDuration = Duration(milliseconds: 250);
 
 // Form Error
 final RegExp emailValidatorRegExp =
-    RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 const String kEmailNullError = "Please Enter your email";
 const String kInvalidEmailError = "Please Enter Valid Email";
 const String kPassNullError = "Please Enter your password";
@@ -37,7 +39,7 @@ const String kAddressNullError = "Please Enter your address";
 
 final otpInputDecoration = InputDecoration(
   contentPadding:
-      EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
+  EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
   border: outlineInputBorder(),
   focusedBorder: outlineInputBorder(),
   enabledBorder: outlineInputBorder(),
@@ -51,20 +53,26 @@ OutlineInputBorder outlineInputBorder() {
 }
 
 const kBottomContainerHeight = 50.0;
-const kActiveCardColour = Color(0xFF1D1E33);
+const kActiveCardColour = Colors.white;
+const kIconColor= Colors.black;
 const kInactiveCardColour = Color(0xFF111328);
 const kBottomContainerColour = Color(0xFFEB1555);
 
 const kLabelTextStyle = TextStyle(
   fontSize: 18.0,
   fontWeight: FontWeight.bold,
-  color: Colors.orange,
+  color: Colors.black,
 );
 
 const kNumberTextStyle = TextStyle(
-  color: Colors.green,
+  color: Colors.blue,
   fontSize: 14.0,
   fontWeight: FontWeight.w900,
+);
+const kEarningNumberTextStyle = TextStyle(
+  color: Colors.black,
+  fontSize: 14.0,
+  fontWeight: FontWeight.w500,
 );
 
 const kLargeButtonTextStyle = TextStyle(

@@ -3,6 +3,7 @@ import 'package:bidding_application_fyp/screens/chat/chat_screen.dart';
 import 'package:bidding_application_fyp/screens/details/details_screen.dart';
 import 'package:bidding_application_fyp/screens/purchased/purchased_screen.dart';
 import 'package:bidding_application_fyp/screens/search/search_screen.dart';
+import 'package:bidding_application_fyp/seller_screens/add_product/add_product_screen.dart';
 import 'package:bidding_application_fyp/seller_screens/become_seller/become_seller_screen.dart';
 import 'package:bidding_application_fyp/seller_screens/seller_complete_profile/seller_complete_profile_screen.dart';
 import 'package:bidding_application_fyp/seller_screens/seller_home/seller_home_screen.dart';
@@ -45,5 +46,8 @@ final Map<String, WidgetBuilder> routes = {
   launcher.routeName: (context) => launcher(),
   BottomNavigation.routeName: (context) => BottomNavigation(),
   SellerProfileScreen.routeName: (context) => SellerProfileScreen(),
+  AddProductScreen.routeName: (context) => AddProductScreen(),
+
+
 
 };

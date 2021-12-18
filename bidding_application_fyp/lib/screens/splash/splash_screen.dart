@@ -1,3 +1,4 @@
+import 'package:bidding_application_fyp/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:bidding_application_fyp/screens/splash/components/body.dart';
 import 'package:bidding_application_fyp/size_config.dart';
@@ -9,6 +10,7 @@ class SplashScreen extends StatelessWidget {
     // You have to call it on your starting screen
     SizeConfig().init(context);
     return Scaffold(
+
       body: Body(),
     );
   }

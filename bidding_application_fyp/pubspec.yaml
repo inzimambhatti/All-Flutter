@@ -36,7 +36,13 @@ dependencies:
   animated_search_bar: ^2.0.0
   font_awesome_flutter: ^9.2.0
   percent_indicator: ^3.4.0
-  eva_icons_flutter: any
+  convex_bottom_bar: ^3.0.0
+  multi_image_picker2: ^5.0.0
+  awesome_dropdown: ^0.0.4
+  f_datetimerangepicker: ^0.2.0
+  sizer: ^2.0.15
+  responsive_ui: ^2.1.0
+
 
 dev_dependencies:
   flutter_test:
