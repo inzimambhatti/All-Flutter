@@ -4,7 +4,7 @@ import 'package:firebaseproject_inzimam/DrawerFile.dart';
 import 'package:firebaseproject_inzimam/model/board.dart';
 import 'package:firebaseproject_inzimam/splash.dart';
 import 'package:flutter/material.dart';
-
+bool obsecure=true;
 final FirebaseDatabase database = FirebaseDatabase.instance;
 
 void main() {
@@ -12,6 +12,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Password Diary"),
@@ -123,15 +125,37 @@ class _MyHomePageState extends State<MyHomePage> {
               query: databaseReference,
               itemBuilder: (_, DataSnapshot snapshot,
                   Animation<double> animation, int index) {
-                return Card(
-                  child: ListTile(
+                return GestureDetector(
+                  onTap: (){
+                   setState(() {
 
-                    title: Text(boardMessages[index].subject),
-                    subtitle: Text(boardMessages[index].body),
-                    leading: Icon(Icons.hide_source),
+                     obsecure=false;
+                   });
+                  },
+                  child: Card(
+                    child: ListTile(
+
+                      title:
+                          TextFormField(
+                  obscureText: obsecure,
+                           enabled: false,
+                            initialValue: boardMessages[index].subject,
+                          ),
+                      subtitle:
+                      Text(boardMessages[index].body),
+                      leading:GestureDetector(
+                          child: Text("Hide"),
+                        onTap: (){
+                            setState(() {
+                               obsecure=true;
+                            });
+
+                        },
+                      ),
+
+                    ),
 
                   ),
-
                 );
               },
             ),
