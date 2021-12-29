@@ -1,6 +1,8 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
+import 'package:firebaseproject_inzimam/DrawerFile.dart';
 import 'package:firebaseproject_inzimam/model/board.dart';
+import 'package:firebaseproject_inzimam/splash.dart';
 import 'package:flutter/material.dart';
 
 final FirebaseDatabase database = FirebaseDatabase.instance;
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: splashscreen(),
     );
   }
 }
@@ -29,6 +31,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   List<Board> boardMessages = [];
   late Board board;
   final FirebaseDatabase database = FirebaseDatabase.instance;
@@ -40,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
 
     board = Board("", "");
-    databaseReference = database.reference().child("board_app");
+    databaseReference = database.reference().child("diaryDetails");
     databaseReference.onChildAdded.listen(_onEntryAdded);
     databaseReference.onChildChanged.listen(_onEntryChanged);
   }
@@ -49,9 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Board App_Inzimam Bhatti"),
-        backgroundColor: Colors.orange,
+        title: Text("Password Diary"),
+        backgroundColor: Colors.blueAccent,
+
       ),
+      drawer: MyDrawer(),
       body: Column(
         children: <Widget>[
           Flexible(
@@ -63,10 +68,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   direction: Axis.vertical,
                   children: <Widget>[
                     ListTile(
-                      leading: Icon(Icons.subject),
+                      leading: Icon(Icons.lock),
                       title: TextFormField(
+                       // obscureText: true,
                         cursorColor: Colors.orange,
-
                         initialValue: "",
                         onSaved: (val) => board.subject = val!,
                         validator: (val) => val == "" ? val : null,
@@ -84,9 +89,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     //Send or Post button
                     FlatButton(
-                      child: Text("Post"),
-                      color: Colors.orange,
+
+                      child: Text("Add Password"),
+                      color: Colors.blueAccent,
                       onPressed: () {
+                        AlertDialog(
+                          title: Text('Welcome'), // To display the title it is optional
+                          content: Text('GeeksforGeeks'), // Message which will be pop up on the screen
+                          // Action widget which will provide the user to acknowledge the choice
+                          actions: [
+                            FlatButton(		 // FlatButton widget is used to make a text to work like a button
+                              textColor: Colors.black,
+                              onPressed: () {},	 // function used to perform after pressing the button
+                              child: Text('CANCEL'),
+                            ),
+                            FlatButton(
+                              textColor: Colors.black,
+                              onPressed: () {},
+                              child: Text('ACCEPT'),
+                            ),
+                          ],
+                        );
                         handleSubmit();
                       },
                     )
@@ -102,12 +125,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   Animation<double> animation, int index) {
                 return Card(
                   child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.blue,
-                    ),
+
                     title: Text(boardMessages[index].subject),
                     subtitle: Text(boardMessages[index].body),
+                    leading: Icon(Icons.hide_source),
+
                   ),
+
                 );
               },
             ),
