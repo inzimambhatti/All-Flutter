@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ListTile(
                       leading: Icon(Icons.lock),
                       title: TextFormField(
-                       // obscureText: true,
+                       obscureText: true,
                         cursorColor: Colors.orange,
                         initialValue: "",
                         onSaved: (val) => board.subject = val!,
@@ -90,30 +90,45 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
 
                     //Send or Post button
-                    FlatButton(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FlatButton(
 
-                      child: Text("Add Password"),
-                      color: Colors.blueAccent,
-                      onPressed: () {
-                        AlertDialog(
-                          title: Text('Welcome'), // To display the title it is optional
-                          content: Text('GeeksforGeeks'), // Message which will be pop up on the screen
-                          // Action widget which will provide the user to acknowledge the choice
-                          actions: [
-                            FlatButton(		 // FlatButton widget is used to make a text to work like a button
-                              textColor: Colors.black,
-                              onPressed: () {},	 // function used to perform after pressing the button
-                              child: Text('CANCEL'),
-                            ),
-                            FlatButton(
-                              textColor: Colors.black,
-                              onPressed: () {},
-                              child: Text('ACCEPT'),
-                            ),
-                          ],
-                        );
-                        handleSubmit();
-                      },
+                          child: Text("Add Password"),
+                          color: Colors.blueAccent,
+                          onPressed: () {
+                            AlertDialog(
+                              title: Text('Welcome'), // To display the title it is optional
+                              content: Text('GeeksforGeeks'), // Message which will be pop up on the screen
+                              // Action widget which will provide the user to acknowledge the choice
+                              actions: [
+                                FlatButton(		 // FlatButton widget is used to make a text to work like a button
+                                  textColor: Colors.black,
+                                  onPressed: () {},	 // function used to perform after pressing the button
+                                  child: Text('CANCEL'),
+                                ),
+                                FlatButton(
+                                  textColor: Colors.black,
+                                  onPressed: () {},
+                                  child: Text('ACCEPT'),
+                                ),
+                              ],
+                            );
+                            handleSubmit();
+                          },
+                        ),
+                        SizedBox(width: 20,),
+                        GestureDetector(
+                          child: Text("Show password"),
+                          onTap: (){
+                            setState(() {
+                              obsecure=false;
+                            });
+
+                          },
+                        ),
+                      ],
                     )
                   ],
                 ),
@@ -129,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onTap: (){
                    setState(() {
 
-                     obsecure=false;
+                     obsecure=true;
                    });
                   },
                   child: Card(
@@ -143,15 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                       subtitle:
                       Text(boardMessages[index].body),
-                      leading:GestureDetector(
-                          child: Text("Hide"),
-                        onTap: (){
-                            setState(() {
-                               obsecure=true;
-                            });
 
-                        },
-                      ),
 
                     ),
 
