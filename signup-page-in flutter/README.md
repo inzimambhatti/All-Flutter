@@ -1,6 +1,14 @@
 # signup
 
-A new Flutter project.
+A new Flutter project. with signuppageand success dialogue.
+
+
+
+
+![image](https://user-images.githubusercontent.com/54174389/150667814-88aa5e38-204b-4964-9c25-2107f3b93be1.png)
+![image](https://user-images.githubusercontent.com/54174389/150667847-93f4c4d7-cb93-4f05-8fa5-0e6131cdb3f9.png)
+
+
 
 ## Getting Started
 
