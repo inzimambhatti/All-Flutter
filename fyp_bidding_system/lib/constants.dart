@@ -5,6 +5,7 @@ import 'package:fyp_bidding_system/size_config.dart';
 const kPrimaryColor = Colors.blueAccent;
 const kMintGreen = Color(0x3EB489);
 const kPrimaryLightColor = Color(0xFFFFECDF);
+
 const kPrimaryGradientColor = LinearGradient(
 
 
@@ -18,6 +19,12 @@ const kTextColor = Color(0xFF757575);
 const kAnimationDuration = Duration(milliseconds: 200);
 
 final headingStyle = TextStyle(
+  fontSize: getProportionateScreenWidth(28),
+  fontWeight: FontWeight.bold,
+  color: Colors.black,
+  height: 1.5,
+);
+final kAppbarTextStyle = TextStyle(
   fontSize: getProportionateScreenWidth(28),
   fontWeight: FontWeight.bold,
   color: Colors.black,

@@ -1,4 +1,5 @@
 import 'package:fyp_bidding_system/components/bottom_navigation.dart';
+import 'package:fyp_bidding_system/components/splash.dart';
 import 'package:fyp_bidding_system/screens/chat/chat_screen.dart';
 import 'package:fyp_bidding_system/screens/details/details_screen.dart';
 import 'package:fyp_bidding_system/screens/my_account/my_account_screen.dart';
@@ -55,6 +56,7 @@ final Map<String, WidgetBuilder> routes = {
   WinningsScreen.routeName: (context) => WinningsScreen(),
   MyAccountScreen.routeName: (context) => MyAccountScreen(),
   WalletScreen.routeName: (context) => WalletScreen(),
+  splashscreen.routeName: (context) => splashscreen(),
 
 
 

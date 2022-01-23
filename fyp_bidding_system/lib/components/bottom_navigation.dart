@@ -1,3 +1,4 @@
+import 'package:flutter_glow/flutter_glow.dart';
 import 'package:fyp_bidding_system/constants.dart';
 import 'package:fyp_bidding_system/screens/chat/chat_screen.dart';
 import 'package:fyp_bidding_system/screens/home/home_screen.dart';
@@ -27,129 +28,140 @@ class _BottomNavigationState extends State<BottomNavigation> {
   var _allPagesSeller=[SellerHomeScreen(),ChatScreen(),AddProductScreen(),WinningsScreen(),ProfileScreen()];
   //int _currentIndex=0;
   int _currentIndex1=0;
+  bool switchSelected = false;
 
   @override
   Widget build(BuildContext context) {
 
     return
-      Container(
-          decoration: BoxDecoration(
-          gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Colors.blueGrey, Colors.orange])),
-
-        child: Scaffold(
-          backgroundColor: Colors.white,
+      Scaffold(
+        backgroundColor: Colors.white,
 
 
-          appBar: AppBar(
-            automaticallyImplyLeading: false,
-            title:
-            isBuyer==true?
-            const Text("Buyer Mode"):const Text("Seller Mode"),
-            backgroundColor:kPrimaryColor,
-            actions: [
-              GestureDetector(
-                  child: const Padding(
-                    padding: EdgeInsets.all(18.0),
-                    child: Icon(Icons.transform,color: Colors.white,),
-                  ),
-                onTap: (){
-                    if(isBuyer==true){
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title:
+          isBuyer==true?
+          const Text("Buyer Mode",
+            style:TextStyle(
+              color: Colors.black,
+             fontSize: 16
+          ),
+          )
+              :
+          const Text("Seller Mode",
+            style:TextStyle(
+                color: Colors.black,
+                fontSize: 16
+            ),),
+          backgroundColor:Colors.white,
+          actions: [
+            GlowSwitch(
+              glowColor: Colors.white,
+              onChanged: (value) {
+                print(value);
+
+                setState(() {
+                  switchSelected = value;
+                  if(isBuyer==true){
+                    MotionToast.success(
+                        title:  Text("Success"),
+                        description:  Text("Switched to seller"),
+                        height: 50,
+                        width:  300
+                    ).show(context);
+
+                    setState(() {
+                      // _currentIndex1=0;
+                      isBuyer=false;
+
+                    });
+                  }
+                  else{
+                    setState(() {
                       MotionToast.success(
                           title:  Text("Success"),
-                          description:  Text("Switched to seller"),
+                          description:  Text("Switched to Buyer"),
                           height: 50,
                           width:  300
                       ).show(context);
-
-                      setState(() {
-                       // _currentIndex1=0;
-                        isBuyer=false;
-
-                      });
-                    }
-                    else{
-                      setState(() {
-                        MotionToast.success(
-                            title:  Text("Success"),
-                            description:  Text("Switched to Buyer"),
-                            height: 50,
-                            width:  300
-                        ).show(context);
-                        isBuyer=true;
-                        //_currentIndex1=0;
-                      });
-                    }
-
-                },
-
-              ),
-
-            ],
-          ),
-
-          body: Center(
-
-            child:
-            isBuyer==true?
-            _allPagesBuyer[_currentIndex1]: _allPagesSeller[_currentIndex1],
-          ),
-
-          bottomNavigationBar:
-          isBuyer==true?
-          ConvexAppBar.badge(
-            {1:"23+"
-            },
-            items: const [
-              TabItem(icon: Icons.home, title: 'Home'),
-              TabItem(icon: Icons.message, title: 'Chat'),
-              TabItem(icon: Icons.search, title: 'Search'),
-              TabItem(icon: FontAwesomeIcons.glassCheers, title: 'Winnings'),
-              TabItem(icon: Icons.people, title: 'Profile'),
-            ],
-            badgeMargin: EdgeInsets.only(bottom: 10),disableDefaultTabController: true,
-            backgroundColor: kPrimaryColor,
-           // initialActiveIndex: 0,//optional, default as 0
-            onTap: (index){
-              setState(() {
-
-                _currentIndex1=index;
-              });
-            },
-          )
-              :
-          ConvexAppBar.badge(
-            const {1:"23+"
-            },
-            items: const [
-              TabItem(icon: Icons.home, title: 'Home'),
-              TabItem(icon: Icons.message, title: 'Chat'),
-              TabItem(icon: Icons.add_box, title: 'Add'),
-              TabItem(icon: FontAwesomeIcons.hammer, title: 'Sold'),
-              TabItem(icon: Icons.people, title: 'Profile'),
-            ],
-            badgeMargin: EdgeInsets.only(bottom: 10),
-            backgroundColor: kPrimaryColor,
-            elevation: 7,
-
-            initialActiveIndex: 0,
-
-            //optional, default as 0
-            onTap: (index){
-              setState(() {
-
-                _currentIndex1=index;
-              });
-            },
-          ),
+                      isBuyer=true;
+                      //_currentIndex1=0;
+                    });
+                  }
 
 
 
+                });
+              },
+              value: switchSelected,
+              activeColor: kPrimaryColor.withOpacity(0.6),
+              blurRadius: 4,
 
+            ),
 
+          ],
         ),
+
+        body: Center(
+
+          child:
+          isBuyer==true?
+          _allPagesBuyer[_currentIndex1]: _allPagesSeller[_currentIndex1],
+        ),
+
+        bottomNavigationBar:
+        isBuyer==true?
+        ConvexAppBar.badge(
+          {1:"23+"
+          },
+          items: const [
+            TabItem(icon: Icons.home, title: 'Home'),
+            TabItem(icon: Icons.message, title: 'Chat'),
+            TabItem(icon: Icons.search, title: 'Search'),
+            TabItem(icon: FontAwesomeIcons.glassCheers, title: 'Winnings'),
+            TabItem(icon: Icons.people, title: 'Profile'),
+          ],
+          badgeMargin: EdgeInsets.only(bottom: 10),disableDefaultTabController: true,
+          backgroundColor: kPrimaryColor,
+         // initialActiveIndex: 0,//optional, default as 0
+          onTap: (index){
+            setState(() {
+
+              _currentIndex1=index;
+            });
+          },
+        )
+            :
+        ConvexAppBar.badge(
+          const {1:"23+"
+          },
+          items: const [
+            TabItem(icon: Icons.home, title: 'Home'),
+            TabItem(icon: Icons.message, title: 'Chat'),
+            TabItem(icon: Icons.add_box, title: 'Add'),
+            TabItem(icon: FontAwesomeIcons.hammer, title: 'Sold'),
+            TabItem(icon: Icons.people, title: 'Profile'),
+          ],
+          badgeMargin: EdgeInsets.only(bottom: 10),
+          backgroundColor: kPrimaryColor,
+          elevation: 7,
+
+          initialActiveIndex: 0,
+
+          //optional, default as 0
+          onTap: (index){
+            setState(() {
+
+              _currentIndex1=index;
+            });
+          },
+        ),
+
+
+
+
+
       );
 
 

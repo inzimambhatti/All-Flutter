@@ -70,6 +70,7 @@ class _BodyState extends State<Body> {
                       value: switchSelected,
                       activeColor: kPrimaryColor.withOpacity(0.6),
                       blurRadius: 4,
+
                     ),
 
 
