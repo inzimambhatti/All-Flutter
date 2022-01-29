@@ -7,6 +7,7 @@ import 'package:fyp_bidding_system/screens/splash/splash_screen.dart';
 import 'package:fyp_bidding_system/services/authentications.dart';
 import 'package:fyp_bidding_system/theme.dart';
 import 'package:fyp_bidding_system/wraper.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
       providers: [
         Provider<AuthService>(create: (_)=>AuthService(),),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
+        defaultTransition: Transition.native,
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: theme(),

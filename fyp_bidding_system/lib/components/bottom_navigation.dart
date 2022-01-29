@@ -1,5 +1,6 @@
 import 'package:flutter_glow/flutter_glow.dart';
 import 'package:fyp_bidding_system/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:fyp_bidding_system/screens/chat/chat_screen.dart';
 import 'package:fyp_bidding_system/screens/home/home_screen.dart';
 import 'package:fyp_bidding_system/screens/profile/profile_screen.dart';
@@ -42,11 +43,13 @@ class _BottomNavigationState extends State<BottomNavigation> {
           automaticallyImplyLeading: false,
           title:
           isBuyer==true?
-          const Text("Buyer Mode",
-            style:TextStyle(
-              color: Colors.black,
-             fontSize: 16
-          ),
+           Text("Buyer Mode",
+            style: GoogleFonts.roboto(
+              textStyle: const TextStyle(
+                color: Colors.black,
+                fontSize: 16
+              )
+            ),
           )
               :
           const Text("Seller Mode",

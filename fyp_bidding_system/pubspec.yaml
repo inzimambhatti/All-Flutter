@@ -56,6 +56,8 @@ dependencies:
   motion_toast: ^2.1.0
   animated_dialog_box: ^0.0.2
   flutter_glow: ^0.2.0
+  get: ^4.6.1
+  google_fonts: ^2.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

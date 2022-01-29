@@ -1,5 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:fyp_bidding_system/components/bottom_navigation.dart';
+import 'package:fyp_bidding_system/screens/home/home_screen.dart';
+import 'package:fyp_bidding_system/screens/sign_up/sign_up_screen.dart';
+import 'package:get/get.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:fyp_bidding_system/components/no_account_text.dart';
@@ -51,43 +55,53 @@ class _BodyState extends State<Body> {
                       Buttons.Google,
                       text: "Signin with Google",
                       onPressed: () async {
-
-
-
-
+                        //final user =
+                        // await signInWithGoogle(context);
+                        // if (user == null) {
+                        //   return;
+                        // }
+                        // await Navigator.pushAndRemoveUntil(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) =>
+                        //         NavBarPage(
+                        //             initialPage:
+                        //             'HomePage'),
+                        //   ),
+                        //       (r) => false,
+                        // );
                       },
                     ),
                     SignInButton(
                       Buttons.Facebook,
                       text: "Signin with Facebook",
-                      onPressed: () async {
-
-
-
-
-                      },
-                    ),
-                    SignInButton(
-                      Buttons.Twitter,
-                      text: "Signin with Twitter",
-                      onPressed: () async {
-
+                      onPressed: ()  {
+                        Get.to(SignUpScreen());
 
 
 
                       },
                     ),
-                    TextButton(onPressed: ()async {
-                      // dynamic result = await _auth.SignInAnon();
+                    ElevatedButton(
+
+                        onPressed: () {
+                      Get.to(
+
+                          BottomNavigation(),
+                        transition: Transition.native,
+                          duration: Duration(seconds: 1),
+
+                      );
+
+                     // dynamic result = await _auth.SignInAnon();
                       // if(result == null){
                       //   print('error signing in');
                       // } else {
                       //   print('signed in');
                       //   print(result.uid);
+
                     }
-
-
-                        , child: Text("Anonymous"))
+                        , child: Text("Continue as Guest"))
                   ],
                 ),
                 SizedBox(height: getProportionateScreenHeight(20)),

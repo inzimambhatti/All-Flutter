@@ -7,6 +7,7 @@ import 'package:fyp_bidding_system/screens/my_account/my_account_screen.dart';
 import 'package:fyp_bidding_system/seller_screens/become_seller/become_seller_screen.dart';
 import 'package:fyp_bidding_system/services/authentications.dart';
 import 'package:fyp_bidding_system/theme.dart';
+import 'package:get/get.dart';
 import 'package:motion_toast/motion_toast.dart';
 import 'package:provider/provider.dart';
 import 'package:switcher/core/switcher_size.dart';
@@ -96,7 +97,35 @@ class _BodyState extends State<Body> {
           ProfileMenu(
             text: "Settings",
             icon: "assets/icons/Settings.svg",
-            press: () {},
+            press: () {
+              Get.bottomSheet(
+
+
+                Container(
+                  child: Wrap(
+                    children: [
+                      ListTile(
+                        leading: Icon(
+                          Icons.wb_sunny_outlined,
+                        ),
+                        title: Text("Light"),
+                        onTap: (){Get.changeTheme(ThemeData.light());},
+                      ),
+                      ListTile(
+                        leading: Icon(
+                          Icons.wb_sunny,
+                        ),
+                        title: Text("Dark"),
+                        onTap: (){Get.changeTheme(ThemeData.dark());},
+                      )
+                    ],
+                  ),
+                ),
+                  backgroundColor: kPrimaryColor,
+
+              );
+              
+            },
           ),
           ProfileMenu(
             text: "Help Center",
