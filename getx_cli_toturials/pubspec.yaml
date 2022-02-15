@@ -1,0 +1,24 @@
+name: getx_cli_toturials
+version: 1.0.0+1
+publish_to: none
+description: getx_cli toturials are create d on this project.
+environment: 
+  sdk: '>=2.15.1 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.6.1
+  flutter: 
+    sdk: flutter
+  flutter_elegant_number_button: ^0.0.6
+  intl: ^0.17.0
+  emoji_picker_flutter: ^1.1.1
+
+dev_dependencies: 
+  flutter_lints: ^1.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+

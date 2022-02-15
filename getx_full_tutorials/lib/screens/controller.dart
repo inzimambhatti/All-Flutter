@@ -9,7 +9,8 @@ class MyController extends GetxController{
     count++;
   }
   void uppercase(){
-    student.name.value=student.name.value.toUpperCase();
+
+    student.name.value=student.lname.value.toUpperCase();
     update();
   }
 
