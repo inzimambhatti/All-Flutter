@@ -3,6 +3,9 @@
 
 # An online Final Year Project (FYP) Submission , managing and maintainence app Des&Dev for COMSATS University Islamabad , Vehari campus
 
+# https://github.com/inzimambhatti
+# https://www.fiverr.com/users/inzimambhatti
+
 ![WhatsApp Image 2022-03-23 at 4 02 27 AM](https://user-images.githubusercontent.com/54174389/161369204-9ed6ae2a-33ce-4739-8be2-12581ecd1ffd.jpeg)
 
 ![WhatsApp Image 2022-03-23 at 4 04 14 AM](https://user-images.githubusercontent.com/54174389/161369209-b3a4b6de-9b74-49b0-9bb0-0f88dee54a23.jpeg)
