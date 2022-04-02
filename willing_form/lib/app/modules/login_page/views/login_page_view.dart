@@ -117,7 +117,12 @@ class LoginPageView extends GetView<LoginPageController> {
                   ),
                   onPressed: () {
                     controller.adminLogin();
-                  })
+                  }),
+              TextButton(
+                  onPressed: () {
+                    controller.optionsDialog();
+                  },
+                  child: Text('Options'))
             ],
           ),
         ),

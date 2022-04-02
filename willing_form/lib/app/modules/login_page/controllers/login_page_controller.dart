@@ -48,6 +48,31 @@ class LoginPageController extends GetxController {
     );
   }
 
+  optionsDialog() {
+    return Get.defaultDialog(
+      title: 'Options',
+      content: Form(
+        key: formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Delete Account"),
+            Text("Change Password"),
+            Text("Edit Account"),
+            Text("More"),
+          ],
+        ),
+      ),
+      textCancel: 'Cancel',
+      confirmTextColor: Colors.white,
+      onConfirm: () {
+        Get.snackbar("Success", "Operation is done!",
+            backgroundColor: Colors.teal);
+      },
+      barrierDismissible: false,
+    );
+  }
+
   buildEmailFormFiled() {
     return TextFormField(
       controller: emailController,
